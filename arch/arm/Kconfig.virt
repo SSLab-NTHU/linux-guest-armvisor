@@ -1,0 +1,24 @@
+#
+# Add by SSLab, NTHU for Turn-on or Turn-off patches for optimization 
+#
+
+menu "Virtualization"
+
+config MEM_OPT
+	bool "Enable geust memory optimization"
+	default n
+
+config CPU_OPT
+	bool "Enable guest cpu optmization"
+	default n
+
+config INTR_OPT
+	bool "Enable interrupt injection model"
+	depends on CPU_OPT
+	default n
+
+config VIRT_REGS_ADDR
+	hex "Share registers' address"
+	default 0xffff1c00
+
+endmenu
